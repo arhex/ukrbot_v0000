@@ -1,0 +1,129 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+.menu1 {
+    background: #2C3E50;
+    color: #DBDDDF;
+    font-size: 17px;
+
+}
+.telmail {
+    padding-top: 10px;
+}
+.menu1 a {
+    color: #DBDDDF;
+    font-size: 17px;
+}
+.menu2 {
+    background: #2C3E50 ;
+
+}
+
+.shopcart {
+    background-color: #F3F3F3;
+    border-radius: 20px;
+    padding: 2px 5px 5px 5px;
+}
+nav>div>div>ul>li>a {
+    position:relative;
+}
+
+nav>div>div>ul>li>a:after {
+    display: block;
+    content: "";
+    height: 3px;
+    width: 0%;
+    left: 50%;
+    background-color: #FF0F33;
+    position:absolute;
+    transition: width .3s ease-in-out;
+    transform:translateX(-50%);
+}
+
+
+
+nav>div>div>ul>li>a:hover:after,
+nav>div>div>ul>li>a:focus:after{
+    width: 100%;
+}
+.banner {
+    background: url("../../mobestom/img/Banner.jpg") no-repeat;
+    background-size: 100%;
+    padding-bottom: 200px;
+    
+    color: #FEFEFE;
+
+
+}
+
+.nextprev {
+    margin-top: 5px;
+    margin-right: 20px;
+    border-radius: 50%;
+    color:red;
+    border: #F7F7F7 1px solid;
+    background-color: #fff;
+}
+h3  {
+    font-weight: bold;
+    font-size: 56px;
+}
+.oferta {
+    font-size: 30px;
+}
+.oferta2{
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+ h4  {
+     margin-top: 50px;
+     font-weight: bold;
+     margin-left: 50px;
+                }
+.btn-all {
+    margin-right: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 30px 30px 30px 30px;
+}
+.category {
+    margin-top: 50px;
+}
+
+
+.footer {
+    background: url("../../mobestom/img/Back.jpg") ;
+    background-size: 100%;
+   padding-top: 50px;
+    color: #fff;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    h3  {
+        font-weight: normal;
+        font-size: 32px;
+    }
+    .oferta {
+        font-size: 20px;
+    }
+    .oferta2{
+        font-size: 16px;
+        font-weight:normal;
+    }
+    .telmail {
+        font-size: 16px;
+    }
+    .foot {
+
+        padding-bottom: 100px;
+        padding-top: 50px;
+        font-size: 15px;
+
+    }
+}
