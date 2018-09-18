@@ -1,4 +1,16 @@
-$("#carouselExampleIndicators").carousel("pause");
+
+$('#pills-profile-tab').click(function () {
+    $('#exampleModal').modal();
+})
+
+$('#pills-contact-tab').click(function () {
+    $('#exampleModal1').modal();
+})
+
+
+
+
+/*$("#carouselExampleIndicators").carousel("pause");
 
 $(document).ready(function() {
 
@@ -29,3 +41,4 @@ $(document).ready(function() {
 
 })
 
+*/
