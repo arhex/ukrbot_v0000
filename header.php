@@ -132,10 +132,11 @@
                     <li class="nav-item "><a class="nav-link" href="#">Запчасти</a></li>
                     <li class="nav-item " ><a class="nav-link" href="#">О компании</a></li>
                     <li class="nav-item " ><a class="nav-link" href="#">Контакты</a></li>
-                    <li class="nav-item " ><div><a class="nav-link" href="#">
+                    <li class="nav-item " ><div><a class="nav-link cart-contents" href="<?php $link = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : WC()->cart->get_cart_url();
+                                                                            echo $link; ?>">
                                 <div class="shopcart">
-                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                    <b>Корзина: </b>12,41 €
+                                    <i class="fa fa-shopping-cart " aria-hidden="true"></i>
+                                    <b>Корзина: </b><?php echo WC()->cart->get_cart_total(); ?>
                                 </div>
                             </a></div></li>
 
@@ -151,11 +152,15 @@
                 <h3>Ищете запчасти?</h3>
                 <p class="oferta">Мы поставляем лучшие запчасти с 1996 года</p>
                 <p class="oferta2">У нас можно найти запчасти по номеру машины или по коду детали</p>
-
+<!-- Тут чекбоксы еще не подключены-->
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">Номер детали</label>
+
+
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">Номер детали</label>
+
                 </div>
+
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
                     <label class="form-check-label" for="exampleRadios2">Номер авто</label>
@@ -163,24 +168,22 @@
 
 
 
-                <form>
-                    <div class="form-row align-items-center">
-                        <div class="col-auto">
-                            <label class="sr-only" for="inlineFormInputGroup">123 ABC</label>
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><img src="<?php echo get_template_directory_uri(). '/assets/' ?>image/piston.png" alt=""></div>
+                    <form method="get" action="<?php esc_url( home_url( '/' )); ?>">
+                        <div class="form-row align-items-center">
+                            <div class="col-auto">
+                                <label class="sr-only" for="inlineFormInputGroup">123 ABC</label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><img src="<?php echo get_template_directory_uri(). '/assets/' ?>image/piston.png" alt=""></div>
+                                    </div>
+                                    <input type="text" value="<?php get_search_query();?>" name="s" class="form-control" id="inlineFormInputGroup" placeholder="123 ABC">
                                 </div>
-                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="123 ABC">
                             </div>
-
-
-                        </div>
-                        <div class="col-auto">
-                            <button type="submit" class="btn btn-danger mb-2"> <i class="fa fa-search" aria-hidden="true"></i> Поиск</button>
-                        </div>
-                    </div>
-                </form>
+                            <div class="col-auto">
+                                <button type="submit" value="<?php esc_attr_x( 'Search', 'submit button' )?>" class="btn btn-danger mb-2"> <i class="fa fa-search" aria-hidden="true"></i> Поиск</button>
+                            </div>
+                            </div>
+                    </form>
             </div>
 
 
