@@ -193,12 +193,12 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart
 function woocommerce_header_add_to_cart_fragment( $fragments ) {
     ob_start();
     ?>
-    <a class="nav-link cart-contents" href="<?php $link = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : wc()->cart->get_cart_url();
+    <a class="nav-link cart-contents shopcart" href="<?php $link = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : wc()->cart->get_cart_url();
     echo $link; ?>">
-        <div class="shopcart">
+
             <i class="fa fa-shopping-cart " aria-hidden="true"></i>
             <b>Корзина: </b><?php echo WC()->cart->get_cart_total(); ?>
-        </div>
+
     </a>
     <?php
 

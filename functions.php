@@ -75,3 +75,20 @@ if (class_exists('WooCommerce')) {
     require get_template_directory() . '/woocommerce/includes/wc_functions_cart.php';
 
 }
+
+
+// Include custom navwalker
+require_once('bs4navwalker.php');
+// Register WordPress nav menu
+register_nav_menu('top', 'Top menu');
+
+/*add_filter( 'wp_nav_menu_items', 'your_custom_menu_item',1,2 );
+function your_custom_menu_item ( $items, $args ) {
+    if ($args->theme_location == 'top') {
+        $items .= '<li><div><a class="nav-link cart-contents" href="' .$link.'">
+                                        <div class="shopcart"><i class="fa fa-shopping-cart " aria-hidden="true"></i>
+                                        <b>Корзина: </b>'.WC()->cart->get_cart_total().'</div></li>';
+    }
+    return $items;
+}
+*/

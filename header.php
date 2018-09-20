@@ -125,26 +125,35 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <div class= "ml-auto" >
-                <ul class=" nav navbar-nav nav-fill" style="font-size: 20px;">
-                    <li class="nav-item  "><a class="nav-link " href="#">Главная </a></li>
-                    <li class="nav-item "><a class="nav-link" href="#">Запчасти</a></li>
-                    <li class="nav-item " ><a class="nav-link" href="#">О компании</a></li>
-                    <li class="nav-item " ><a class="nav-link" href="#">Контакты</a></li>
-                    <li class="nav-item " ><div><a class="nav-link cart-contents" href="<?php $link = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : WC()->cart->get_cart_url();
-                                                                            echo $link; ?>">
-                                <div class="shopcart">
-                                    <i class="fa fa-shopping-cart " aria-hidden="true"></i>
-                                    <b>Корзина: </b><?php echo WC()->cart->get_cart_total(); ?>
-                                </div>
-                            </a></div></li>
+        <?php
+        $link = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : WC()->cart->get_cart_url();
 
-                </ul>
-            </div>
-        </div>
+
+        wp_nav_menu([
+            'menu'            => 'top',
+            'theme_location'  => 'top',
+            'container'       => 'div',// Запихиваем корзину как отдельный елемент используя items_wrap
+            'items_wrap' => '<ul class=" nav navbar-nav nav-fill" style="font-size: 20px;">%3$s<li id="item-id" class="nav-item" >
+                                        <div><a class="nav-link cart-contents shopcart" href="' .$link.'">
+                                            <i class="fa fa-shopping-cart " aria-hidden="true"></i>
+                                                <b>Корзина: </b>'.WC()->cart->get_cart_total().'
+                                          
+                                          </a>
+                                        </div>
+                                       </li>
+                                  </ul>',
+            'container_id'    => 'navbarNavDropdown',
+            'container_class' => 'collapse  navbar-collapse justify-content-end',
+            'menu_id'         => false,
+            'menu_class'      => '',
+            'depth'           => 2,
+            'fallback_cb'     => 'bs4navwalker::fallback',
+            'walker'          => new bs4Navwalker()
+        ]);
+        ?>
 
     </nav>
+
     <div class="banner">
         <div class="row">
             <div class="col-lg-1 col-sm-1 col-md-1 col-xl-1"></div>
