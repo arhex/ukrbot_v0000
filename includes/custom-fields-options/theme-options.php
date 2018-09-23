@@ -13,6 +13,8 @@ Container::make('theme_options', 'Настройки темы')
         Field::make( 'text', 'crb_position', 'Position' ),
     ))
     ->add_tab('Подвал', array(
-        Field::make( 'text', 'crb_email', 'Notification Email' ),
-        Field::make( 'text', 'crb_phone', 'Phone Number' ),
+        Field::make( 'text', 'est_footer_copy', 'Kopirate' ) -> set_default_value('Копирайт'),
+        Field::make( 'text', 'crb_phone', 'Phone_Number' ) -> set_default_value('+372 621 3419'),
+        Field::make( 'text', 'crb_email', 'Email' ) -> set_default_value('info@autovaruosad.ee'),
+        Field::make( 'text', 'crb_www', 'WWW' ) -> set_default_value('www.autovaruosad.ee'),
     ));
