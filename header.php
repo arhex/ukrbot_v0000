@@ -204,50 +204,6 @@
 </div>
 
 
-<div class="category container-fluid">
 
 
-    <div class="row justify-content-lg-center">
-
-        <?php $parentid = get_queried_object_id();
-
-        $args = array(
-            'parent' => $parentid
-        );
-
-        $terms = get_terms( 'product_cat', $args );
-
-        if ( $terms ) {
-
-
-
-            foreach ( $terms as $term ) {
-
-
-
-                //woocommerce_subcategory_thumbnail( $term );
-
-                $thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
-                $image        =wp_get_attachment_image_url($thumbnail_id, 'full');
-                if ($image) {
-                    echo '<a href="' . esc_url(get_term_link($term)) . '"> <img src=' . esc_url($image) . ' alt=""> </a>';
-                }
-
-
-
-
-
-            }
-
-
-
-        } ?>
-
-
-
-    </div>
-
-</div>
-    <p class="woocommerce-error"> kdsalkfd;slfjds;jgfjbhdjklf</p>
-	<div id="content" class="site-content">
 
