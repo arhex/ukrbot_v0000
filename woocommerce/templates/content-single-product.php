@@ -55,9 +55,11 @@ if ( post_password_required() ) {
 			 * @hooked woocommerce_template_single_sharing - 50
 			 * @hooked WC_Structured_Data::generate_product_data() - 60
 			 */
+        woocommerce_template_single_add_to_cart();
 			do_action( 'woocommerce_single_product_summary' );
 		?>
-	</div>
+
+    </div>
 
 	<?php
 		/**
@@ -68,6 +70,7 @@ if ( post_password_required() ) {
 		 * @hooked woocommerce_output_related_products - 20
 		 */
 		do_action( 'woocommerce_after_single_product_summary' );
+
 	?>
 </div>
 

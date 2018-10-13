@@ -44,7 +44,7 @@ get_header(); ?>
         <div class=" justify-content-between">
             <div class="row justify-content-between">
                 <div class="col-6"><h4>Популярные марки автомобилей</h4></div>
-                <button class=" btn-all btn btn-danger col-1">Все марки</button>
+                <button class=" btn-all btn btn-danger col-1" onClick='location.href="http://localhost/wordpress/vsi-zapchasti/"'>Все марки</button>
             </div>
             <div class="row justify-content-lg-center" >
                 <?php
@@ -52,6 +52,7 @@ get_header(); ?>
                     'hide_empty' => false,
                     'taxonomy' => 'product_cat',
                     'parent'             => 16,
+                    'number'=>18,
                 );
                 $terms = get_terms( $args );
                 if ( $terms ) {
@@ -99,28 +100,40 @@ get_header(); ?>
 
                     <div class="row justify-content-lg-center" >
                         <?php
-                        /** Ниже через скрипт можно узнать разрешение екрана*/
+                        /** Ниже через js - скрипт можно узнать разрешение екрана*/
                         $width = "<script>var windowWidth = screen.width; document.writeln(windowWidth); </script>";
                         $height = "<script>var windowHeight = screen.height; document.writeln(windowHeight); </script>";
 
                         //echo 'This screen is : '.$width.' x '.$height;
                         ?>
-                        <?php echo do_shortcode('[products limit="3" columns="3" visibility="featured" ]'); ?>
-                        <?php echo do_shortcode('[products limit="3" columns="3" visibility="featured" ]'); ?>
+                        <div class="row_na_2">
+                        <?php echo do_shortcode('[products limit="3" columns="3" visibility="featured" orderby = "ID" ]'); ?>
+                        </div>
+                        <div class="row_na_2">
+                        <?php echo do_shortcode('[products limit="3" columns="3" visibility="featured" orderby = "author"]'); ?>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item ">
 
                     <div class="row justify-content-lg-center" >
-                        <?php echo do_shortcode('[products limit="3" columns="3" visibility="featured" ]'); ?>
-                        <?php echo do_shortcode('[products limit="3" columns="3" visibility="featured" ]'); ?>
+                        <div class="row_na_2">
+                        <?php echo do_shortcode('[products limit="3" columns="3" visibility="featured" orderby = "title" ]'); ?>
+                        </div>
+                        <div class="row_na_2">
+                        <?php echo do_shortcode('[products limit="3" columns="3" visibility="featured" orderby = "date"]'); ?>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item ">
 
                     <div class="row justify-content-lg-center" >
-                        <?php echo do_shortcode('[products limit="3" columns="3" visibility="featured" ]'); ?>
-                        <?php echo do_shortcode('[products limit="3" columns="3" visibility="featured" ]'); ?>
+                        <div class="row_na_2">
+                        <?php echo do_shortcode('[products limit="3" columns="3" visibility="featured" orderby = "modified"]'); ?>
+                        </div>
+                        <div class="row_na_2">
+                        <?php echo do_shortcode('[products limit="3" columns="3" visibility="featured" orderby = "rand" ]'); ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -156,15 +169,23 @@ get_header(); ?>
             <div class="carousel-item active">
 
                 <div class="row justify-content-center" >
-                    <?php echo do_shortcode('[product_category category="Accessories" per_page="3" columns="3"]'); ?>
-                    <?php echo do_shortcode('[product_category category="Accessories" per_page="3" columns="3"]'); ?>
+                    <div class="row_na_2">
+                    <?php echo do_shortcode('[product_category category="Accessories" per_page="3" columns="3" orderby = "ID"]'); ?>
+                    </div>
+                    <div class="row_na_2">
+                    <?php echo do_shortcode('[product_category category="Accessories" per_page="3" columns="3" orderby = "author"]'); ?>
+                    </div>
                 </div>
             </div>
             <div class="carousel-item">
 
                 <div class="row justify-content-center" >
-                    <?php echo do_shortcode('[product_category category="Accessories" per_page="3" columns="3"]'); ?>
-                    <?php echo do_shortcode('[product_category category="Accessories" per_page="3" columns="3"]'); ?>
+                    <div class="row_na_2">
+                     <?php echo do_shortcode('[product_category category="Accessories" per_page="3" columns="3" orderby = "title" ]'); ?>
+                    </div>
+                    <div class="row_na_2">
+                    <?php echo do_shortcode('[product_category category="Accessories" per_page="3" columns="3" orderby = "date"]'); ?>
+                    </div>
                 </div>
             </div>
         </div>
